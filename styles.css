@@ -1,144 +1,215 @@
-/* General Styles */
+/* Reset de estilos básicos */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
 }
 
 body {
-    background-color: #f4f4f9;
-    color: #333;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.7;
+    background-color: #f4f4f9; /* Fondo claro */
+    color: #333333; /* Texto oscuro */
+    padding: 0 10px;
 }
 
+/* Estilos del Header y Navegación */
 header {
-    background-color: #2c3e50;
-    color: white;
-    padding: 1rem 0;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
+    background: #ffffff; /* Fondo blanco */
+    color: #333333;
+    padding: 15px 0;
+    border-bottom: 3px solid #cccccc;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.nav-links {
-    display: flex;
+nav ul {
     list-style: none;
+    display: flex;
+    justify-content: space-around; /* Más espacio entre los elementos */
+    padding: 0;
 }
 
-.nav-links li {
+nav ul li {
     margin: 0 15px;
 }
 
-.nav-links a {
-    color: white;
+nav ul li a {
+    color: #333333; /* Texto oscuro */
     text-decoration: none;
-    font-weight: 500;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: color 0.3s;
 }
 
-section {
-    padding: 80px 0;
+nav ul li a:hover {
+    color: #0056b3; /* Nuevo color de hover */
 }
 
-.container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    color: #2c3e50;
-}
-
-p, ul {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: #555;
-}
-
-ul {
-    list-style: none;
+/* Sección de Bienvenida */
+#welcome-container, .welcome-container {
+    display: block; /* Cambiar a bloque para una disposición en columnas */
+    padding: 80px 20px;
+    background: #eaeaea; /* Fondo claro */
+    text-align: center;
+    border-bottom: 2px solid #cccccc;
 }
 
 .profile-pic {
-    max-width: 150px;
-    border-radius: 50%;
     margin-bottom: 20px;
 }
 
-.project-pic, .hobbies-list img {
-    max-width: 100px;
-    margin-top: 10px;
+.profile-pic img {
+    width: 250px; /* Tamaño de la imagen cuadrada */
+    height: 250px;
+    border-radius: 15px; /* Bordes redondeados */
+    object-fit: contain; /* Asegura que la imagen mantenga su proporción */
+    border: 2px solid #555555; /* Borde metálico oscuro */
 }
 
-.social-links img {
-    width: 30px;
-    height: 30px;
-    margin-right: 15px;
+
+.intro-text {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
 }
 
-/* Hobbies Styles */
-.hobbies-list li {
-    display: inline-block;
-    background-color: #3498db;
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    margin-right: 10px;
+.intro-text h1 {
+    font-size: 2.4em;
+    margin-bottom: 10px;
+    color: #333333;
+    font-weight: normal;
 }
 
-/* Button for Dark Mode */
-#toggle-dark-mode {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    padding: 10px 20px;
-    background-color: #3498db;
-    color: white;
-    border: none;
-    cursor: pointer;
+.intro-text p {
+    font-size: 1.2em;
+    color: #555555;
 }
 
-/* Dark Mode Styles */
-.dark-mode {
-    background-color: #2c3e50;
-    color: #ecf0f1;
+/* Sección Sobre mí */
+#about {
+    padding: 60px 20px;
+    background: #ffffff;
+    text-align: left; /* Cambiar a texto alineado a la izquierda */
 }
 
-.dark-mode header {
-    background-color: #34495e;
+#about h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #0056b3; /* Nuevo color de título */
 }
 
-.dark-mode .nav-links a {
-    color: #ecf0f1;
+#about p {
+    font-size: 1.1em;
+    max-width: 850px;
+    margin: 0 auto;
+    color: #333333;
 }
 
-.dark-mode h2 {
-    color: #ecf0f1;
+/* Sección de Proyectos */
+#projects {
+    padding: 70px 20px;
+    background: #f4f4f9;
 }
 
-.dark-mode .hobbies-list li {
-    background-color: #2980b9;
+#projects h2 {
+    text-align: left; /* Título alineado a la izquierda */
+    font-size: 2em;
+    margin-bottom: 30px;
+    color: #0056b3;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-    }
-    .nav-links {
-        flex-direction: column;
-        margin-top: 10px;
-    }
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Mantener las tres columnas */
+    gap: 30px; /* Aumentar la separación */
+}
+
+.project-item {
+    border: 2px solid #cccccc;
+    border-radius: 15px;
+    background-color: #ffffff;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.project-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.project-overlay {
+    padding: 20px;
+    background: #0056b3; /* Fondo azul para el overlay */
+    color: #ffffff;
+    text-align: center;
+    font-size: 1.3em;
+}
+
+/* Sección Cuaderno y Reflexión */
+#journal, #reflection {
+    padding: 60px 20px;
+    background: #ffffff;
+    border-bottom: 2px solid #cccccc;
+}
+
+#journal h2, #reflection h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+    color: #0056b3;
+    text-align: left;
+}
+
+.cards-container {
+    display: flex; /* Cambiar de grid a flexbox */
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    background: #ffffff;
+    border: 2px solid #cccccc;
+    border-radius: 10px;
+    transition: box-shadow 0.3s, transform 0.3s;
+    width: 30%; /* Mantener el tamaño */
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 25px;
+}
+
+.card-content h3 {
+    margin-bottom: 10px;
+    font-size: 1.4em;
+    color: #333333;
+}
+
+.card-content p {
+    font-size: 1.1em;
+    color: #555555;
+}
+
+/* Footer */
+footer {
+    background: #f4f4f9;
+    color: #333333;
+    text-align: center;
+    padding: 30px 0;
+    font-size: 1.1em;
 }
